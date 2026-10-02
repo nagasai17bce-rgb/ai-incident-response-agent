@@ -1,20 +1,15 @@
 # AI Incident Response Agent
 
-Incident triage and human-approved remediation planning.
+Incident triage workflow with human-approved remediation.
 
-## Quick start
+## Run
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+python -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'
 uvicorn app.main:app --reload
 ```
 
 POST `{"value":"demo"}` to `/v1/run`.
 
-## Architecture
-
-Client -> FastAPI -> domain service -> policy/state logic -> structured response.
-
-The project is intentionally credential-free and runnable locally. Production deployment should add authentication, durable storage, secrets management, observability, distributed queues, and provider-specific adapters where applicable.
+Local runnable reference; production integrations belong behind explicit adapters.
